@@ -17,7 +17,7 @@ app.use(express.json());
 // mongoose.connect(process.env.MONGO_URI, () => console.log('MongoDB Connected Successffully'));
 
 
-mongoose.connect("mongodb+srv://r555sid:RJjgkHiuz7JuoClP@cluster0.icw318j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log('MongoDB connection error: ', err));
 
