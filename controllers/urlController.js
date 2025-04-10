@@ -2,6 +2,11 @@ const URL = require('../models/URL');
 
 exports.shorten = async (req, res) => {
     const { originalUrl, customAlias } = req.body;
+
+    if (!customAlias) {
+        return res.status(400).json({ msg: 'Custom alias is required' });
+    }
+
     const exists = await URL.findOne({ shortId: customAlias });
     if (exists) return res.status(400).json({ msg: 'Alias already in use' });
 
