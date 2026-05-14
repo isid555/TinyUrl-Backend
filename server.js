@@ -11,6 +11,7 @@ const urlRoutes = require('./routes/urlRoutes');
 
 
 const app = express();
+app.use(express.json());
 app.use(cors({
     origin: [
         'http://localhost:5173',
@@ -18,7 +19,7 @@ app.use(cors({
     ],
     credentials: true
 }));
-app.use(express.json());
+
 
 // mongoose.connect(process.env.MONGO_URI, () => console.log('MongoDB Connected Successffully'));
 
