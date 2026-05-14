@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const authRoutes = require('./routes/authRoutes');
+// const authRoutes = require('./routes/authRoutes');
 
 
 const urlRoutes = require('./routes/urlRoutes');
@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 
 app.use('/api/url', urlRoutes);
 app.get('/u/:alias', async (req, res) => {
