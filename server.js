@@ -11,7 +11,13 @@ const urlRoutes = require('./routes/urlRoutes');
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://tiny-url-ochre.vercel.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // mongoose.connect(process.env.MONGO_URI, () => console.log('MongoDB Connected Successffully'));
