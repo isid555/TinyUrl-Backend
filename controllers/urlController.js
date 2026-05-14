@@ -13,7 +13,7 @@ exports.shorten = async (req, res) => {
     const url = new URL({
         originalUrl,
         shortId: customAlias,
-        userId: req.user.id,
+        // userId: req.user.id,
     });
     await url.save();
     res.status(201).json(url);
