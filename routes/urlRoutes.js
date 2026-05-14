@@ -5,7 +5,7 @@ const { shorten, getUserUrls} = require('../controllers/urlController');
 
 
 
-router.post('/shorten', shorten);
-router.get('/history', getUserUrls);
+router.post('/shorten', auth, shorten);
+router.get('/history', auth, getUserUrls);
 
 module.exports = router;
